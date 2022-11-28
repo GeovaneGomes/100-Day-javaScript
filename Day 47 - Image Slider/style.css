@@ -74,7 +74,7 @@ img {
   left: 5rem;
   opacity: 0;
   width: 55%;
-  counter-reset: var(--white);
+  color: var(--white);
   padding: 3rem;
   transform: translateX(3rem);
 }
@@ -95,7 +95,6 @@ img {
   border-radius: 50%;
   position: absolute;
 }
-
 .buttons button:hover {
   background-color: var(--white);
   color: #777;
@@ -105,7 +104,6 @@ img {
   top: 35%;
   right: 1.5rem;
 }
-
 .prev {
   top: 35%;
   left: 1.5rem;
