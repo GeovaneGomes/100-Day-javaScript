@@ -10,12 +10,10 @@ let state,
 
 showPassword.addEventListener("click", toggle);
 eyeIcon.addEventListener("click", toggleEye);
-
-password.addEventListener("click", () => {
+password.addEventListener("keyup", () => {
   let pass = password.value;
   checkStrength(pass);
 });
-
 
 // Toggle password visibility
 function toggle() {
@@ -44,7 +42,6 @@ function checkStrength(password) {
   } else {
     removeCheck(lowUpperCase);
   }
-
   // Check For Numbers
   if (password.match(/([0-9])/)) {
     strength += 1;
@@ -52,7 +49,6 @@ function checkStrength(password) {
   } else {
     removeCheck(number);
   }
-
   // Check For Special char
   if (password.match(/([!,%,&,@,#,$,^,*,?,_,~])/)) {
     strength += 1;
@@ -60,14 +56,44 @@ function checkStrength(password) {
   } else {
     removeCheck(specialChar);
   }
-
-  // Check is password is > 7
+  // Check if password is > 7
   if (password.length > 7) {
     strength += 1;
     addCheck(eightChar);
   } else {
     removeCheck(eightChar);
   }
+
+  // passwordStrength.classList.remove("pb-danger", "pb-warning", "pb-primary", "pb-success");
+  // passwordStrength.classList.add("");
+  // Update progress bar
+  if (strength == 1) {
+    removePassStrength();
+    passwordStrength.classList.add("pb-danger");
+    passwordStrength.style = "width: 25%";
+  } else if (strength == 2) {
+    removePassStrength();
+    passwordStrength.classList.add("pb-warning");
+    passwordStrength.style = "width: 50%";
+  } else if (strength == 3) {
+    removePassStrength();
+    passwordStrength.classList.add("pb-primary");
+    passwordStrength.style = "width: 75%";
+  } else if (strength == 4) {
+    removePassStrength();
+    passwordStrength.classList.add("pb-success");
+    passwordStrength.style = "width: 100%";
+  }
+}
+
+// Remove password strength classes
+function removePassStrength() {
+  passwordStrength.classList.remove(
+    "pb-danger",
+    "pb-warning",
+    "pb-primary",
+    "pb-success"
+  );
 }
 
 // Add Check Icon
@@ -75,8 +101,7 @@ function addCheck(charRequired) {
   charRequired.classList.remove("fa-circle");
   charRequired.classList.add("fa-check");
 }
-
-// REmove Check Icon
+// Remove Check Icon
 function removeCheck(charRequired) {
   charRequired.classList.remove("fa-check");
   charRequired.classList.add("fa-circle");
