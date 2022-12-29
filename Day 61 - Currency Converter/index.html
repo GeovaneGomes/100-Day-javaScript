@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script
+      src="https://kit.fontawesome.com/1935d064dd.js"crossorigin="anonymous"
+    ></script>
+        <link rel="stylesheet" href="style.css">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+        <section class="main">
+            <h1>Simple Currency Converter</h1>
+            
+            <div class="container box">
+                <div class="converter">
+
+                    <!--Base Conversion-->
+                    <div class="base-converter">
+                        <p>Exchange Rate</p>
+                        <span class="base">1 USD = 300 GBP</span>
+                    </div>
+                    <!--ENd Base Conversion-->
+
+                    <!--Text From & to-->
+                    <div class="text">
+                        <p>From</p>
+                        <p>To</p>
+                    </div>
+                    <!--ENd Text From & To-->
+
+                    <!--Main Conversion-->
+                    <div class="main-convert">
+                        <!--From-->
+                        <div class="cur-box">
+
+                            <div class="currency from">
+                                <img 
+                                src="https://www.worldometers.info/img/flags/small/tn_us-flag.gif" 
+                                alt="" 
+                            />
+
+                            <select class="cur-1">
+                                <option value="EUR">EUR</option>
+                                <option value="GBP">GBP</option>
+                                <option value="USD" selected>USD</option>
+                            </select>
+                            </div>
+
+                            <input type="text" class="cur-1-input" placeholder="0"> 
+                        </div>
+                        <!--End From-->
+
+                        <!--Switch Button-->
+                        <div class="switch-cur">
+                            <div class="fas fa-exchange-alt"></div>
+                        </div>
+                        <!--End Switch Button-->
+
+                        <!--To-->
+                        <div class="cur-box">
+
+                            <div class="currency to">
+                                <img 
+                                src="https://www.worldometers.info/img/flags/small/tn_uk-flag.gif" 
+                                alt="" 
+                            />
+
+                            <select class="cur-2">
+                                <option value="EUR">EUR</option>
+                                <option value="GBP" selected>GBP</option>
+                                <option value="USD">USD</option>
+                            </select>
+                            </div>
+
+                            <input type="text" class="cur-2-input" placeholder="0.00"> 
+                        </div>
+                        <!--End To-->
+                        
+                    </div>
+                    <!--End Main Conversion-->
+                </div>
+            </div>
+        </section>
+
+        <script src="script.js"></script>
+    </body>
+
+</html>
